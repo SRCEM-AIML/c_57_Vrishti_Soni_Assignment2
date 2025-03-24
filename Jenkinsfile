@@ -2,14 +2,15 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'vinayakmishra11/studentproject'
+        IMAGE_NAME = 'vrish21/django-dock
+'
         CONTAINER_NAME = 'studentproject'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/vinayakmishra-11/StudentProject.git'
+                git branch: 'main', url: 'https://github.com/SRCEM-AIML/c_57_Vrishti_Soni_Assignment2.git'
             }
         }
 
@@ -22,7 +23,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+                    withCredentials([usernamePassword(credentialsId: 'vs1', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
                         bat """
                         echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin
                         docker push %IMAGE_NAME%
