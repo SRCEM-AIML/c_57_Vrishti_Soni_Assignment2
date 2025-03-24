@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'vrish21/django-dock'
-'
         CONTAINER_NAME = 'studentproject'
     }
 
