@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'vrish21/django-dock
+        IMAGE_NAME = 'vrish21/django-dock'
 '
         CONTAINER_NAME = 'studentproject'
     }
